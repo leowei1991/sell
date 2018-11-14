@@ -2,7 +2,10 @@ package com.xinyan.sell.utils;
 
 import java.util.Random;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 public class KeyUtil {
 
     /**

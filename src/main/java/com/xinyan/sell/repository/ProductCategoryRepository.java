@@ -7,7 +7,8 @@ import java.util.List;
 
 
 /**
- *
+ * Administrator
+ * 2018/11/13 0013
  */
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
 

@@ -5,7 +5,10 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 @Data
 public class ProductInfoVO {
 

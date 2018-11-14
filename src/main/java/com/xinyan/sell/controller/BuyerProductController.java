@@ -20,12 +20,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 @RestController
 @RequestMapping("/buyer/product")
 public class BuyerProductController {
 
     @Autowired
     private ProductService productService;
+
 
     @Autowired
     private CategoryService categoryService;

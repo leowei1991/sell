@@ -2,7 +2,10 @@ package com.xinyan.sell.VO;
 
 import lombok.Data;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 @Data
 public class ResultVO<T> {
 

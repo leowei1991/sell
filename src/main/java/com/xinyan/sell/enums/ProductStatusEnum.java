@@ -2,7 +2,10 @@ package com.xinyan.sell.enums;
 
 import lombok.Getter;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 @Getter
 public enum ProductStatusEnum implements CodeEnum {
     UP(0, "在架"),

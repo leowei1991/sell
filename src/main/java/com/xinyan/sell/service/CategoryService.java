@@ -4,7 +4,10 @@ import com.xinyan.sell.po.ProductCategory;
 
 import java.util.List;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 public interface CategoryService {
 
     ProductCategory findOne(Integer categoryId);

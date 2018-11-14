@@ -6,7 +6,10 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
-
+/**
+ * Administrator
+ * 2018/11/13 0013
+ */
 public interface ProductService {
 
     ProductInfo findOne(String productId);
