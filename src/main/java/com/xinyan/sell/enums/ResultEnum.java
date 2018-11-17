@@ -4,6 +4,7 @@ import lombok.Getter;
 /**
  * Administrator
  * 2018/11/13 0013
+ *泛型类
  */
 @Getter
 public enum ResultEnum {

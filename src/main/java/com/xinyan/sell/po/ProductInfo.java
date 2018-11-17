@@ -11,6 +11,7 @@ import java.util.Date;
 /**
  * Administrator
  * 2018/11/13 0013
+ * 产品信息 类
  */
 @Data
 @Entity

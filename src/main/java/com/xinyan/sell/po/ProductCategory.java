@@ -12,6 +12,8 @@ import java.util.Date;
 /**
  * Administrator
  * 2018/11/13 0013
+ *
+ * 产品类别
  */
 @Entity
 @DynamicUpdate
@@ -29,8 +31,10 @@ public class ProductCategory {
     /** 类目编号. */
     private Integer categoryType;
 
+    /** 更新时间 */
     private Date createTime;
 
+    /** 修改时间 */
     private Date updateTime;
 
     public ProductCategory() {

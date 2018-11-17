@@ -22,6 +22,7 @@ public class ProductInfoRepositoryTest {
 
     }
 
+    /** 商品信息列表 */
     @Test
     public void findAll(){
         List<ProductInfo> productInfoList = productInfoRepository.findAll();
