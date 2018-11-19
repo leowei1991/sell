@@ -1,7 +1,10 @@
 package com.xinyan.sell.service.impl;
 
 
+import com.xinyan.sell.dto.CartDTO;
 import com.xinyan.sell.enums.ProductStatusEnum;
+import com.xinyan.sell.enums.ResultEnum;
+import com.xinyan.sell.exception.SellException;
 import com.xinyan.sell.po.ProductInfo;
 import com.xinyan.sell.repository.ProductInfoRepository;
 import com.xinyan.sell.service.ProductService;
@@ -33,17 +36,44 @@ public class ProductServiceImpl implements ProductService {
         return repository.findByProductStatus(ProductStatusEnum.UP.getCode());
     }
 
+
     @Override
-    public Page<ProductInfo> findAll(Pageable pageable) {
-        return repository.findAll(pageable);
+    @Transactional//事物
+    public void increaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO: cartDTOList) {
+            //先查询
+            ProductInfo productInfo = repository.findOne(cartDTO.getProductId());
+            //不存在抛自定义异常
+            if (productInfo == null) {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            //增加库存
+            Integer result = productInfo.getProductStock() + cartDTO.getProductQuantity();
+            productInfo.setProductStock(result);
+
+            repository.save(productInfo);
+        }
+
     }
 
     @Override
-    public ProductInfo save(ProductInfo productInfo) {
-        return repository.save(productInfo);
+    @Transactional//事物
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO: cartDTOList) {
+            ProductInfo productInfo = repository.findOne(cartDTO.getProductId());
+            if (productInfo == null) {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+
+            Integer result = productInfo.getProductStock() - cartDTO.getProductQuantity();
+            if (result < 0) {
+                throw new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
+            }
+
+            productInfo.setProductStock(result);
+
+            repository.save(productInfo);
+        }
     }
-
-
-
 
 }
