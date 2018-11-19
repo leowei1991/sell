@@ -11,17 +11,5 @@ public final class JsonUtil {
 
     public static ObjectMapper objectMapper;
 
-    static {
-        if (objectMapper == null){
-            objectMapper = new ObjectMapper();
-//            objectMapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, );
-        }
-    }
 
-//    public static String toJson(Object object) {
-//        GsonBuilder gsonBuilder = new GsonBuilder();
-//        gsonBuilder.setPrettyPrinting();
-//        Gson gson = gsonBuilder.create();
-//        return gson.toJson(object);
-//    }
 }
