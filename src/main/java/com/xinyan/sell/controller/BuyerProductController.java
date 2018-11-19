@@ -63,13 +63,13 @@ public class BuyerProductController {
         for (ProductCategory productCategory:productCategoryList){
             ProductVO productVO = new ProductVO();
             //BeanUtils 进行属性的拷贝
-            BeanUtils.copyProperties(productCategory, productVO);
+//            BeanUtils.copyProperties(productCategory, productVO);
 
             List<ProductInfoVO> productInfoVOList = new ArrayList<>();
             for (ProductInfo productInfo: productInfoList){
                 if (productInfo.getCategoryType().equals(productCategory.getCategoryType())){
                     ProductInfoVO productInfoVO = new ProductInfoVO();
-                    BeanUtils.copyProperties(productInfo, productInfoVO);
+//                    BeanUtils.copyProperties(productInfo, productInfoVO);
                     productInfoVOList.add(productInfoVO);
                 }
             }
