@@ -6,10 +6,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/14
  */
-public interface ProductInfoRepository extends JpaRepository<ProductInfo, String> {
+public interface ProductRepository extends
+        JpaRepository<ProductInfo,String> {
 
+    /**根据商品状态查询
+     * @param productStatus
+     * @return
+     */
     List<ProductInfo> findByProductStatus(Integer productStatus);
 }

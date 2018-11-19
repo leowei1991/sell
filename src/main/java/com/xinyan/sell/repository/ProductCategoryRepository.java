@@ -7,12 +7,16 @@ import java.util.List;
 
 
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/14
  */
-public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
+public interface ProductCategoryRepository extends
+        JpaRepository<ProductCategory, Integer> {
 
+    /**
+     * 类目类型查询
+     * @param categoryTypeList
+     * @return
+     */
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
-
-    ProductCategory findByCategoryId(Integer id);
 }

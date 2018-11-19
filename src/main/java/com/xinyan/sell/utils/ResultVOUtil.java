@@ -1,33 +1,27 @@
 package com.xinyan.sell.utils;
 
-import com.xinyan.sell.VO.ResultVO;
+import com.xinyan.sell.vo.ResultVO;
+import lombok.Getter;
+
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/14 22:55
+ *
+ * 视图返回工具类
  */
+@Getter
 public class ResultVOUtil {
 
-    public static ResultVO success(Object object) {
-        ResultVO resultVO = new ResultVO();
-        resultVO.setData(object);
-        resultVO.setCode(0);
-        resultVO.setMsg("成功");
-        return resultVO;
-    }
-
-    public static ResultVO success() {
-        return success(null);
-    }
-
-    /**
-     * @param code
-     * @param msg
+    /** 返视图信息
+     * @param data
      * @return
      */
-    public static ResultVO error(Integer code, String msg) {
+    public static ResultVO success(Object data){
         ResultVO resultVO = new ResultVO();
-        resultVO.setCode(code);
-        resultVO.setMsg(msg);
+        resultVO.setCode(0);
+        resultVO.setMsg("成功");
+        resultVO.setData(data);
+
         return resultVO;
     }
 }

@@ -9,39 +9,39 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/14 17:13
  */
 @Data
-@Entity
 @DynamicUpdate
+@Entity
 public class ProductInfo {
 
     @Id
+    /** 商品ID */
     private String productId;
 
-    /** 名字. */
+    /** 商品名称 */
     private String productName;
 
-    /** 单价. */
+    /** 商品价格 */
     private BigDecimal productPrice;
 
-    /** 库存. */
+    /** 商品库存 */
     private Integer productStock;
 
-    /** 描述. */
+    /** 商品描述 */
     private String productDescription;
 
-    /** 小图. */
+    /** 商品图片 */
     private String productIcon;
 
-    /** 状态, 0正常1下架. */
+    /** 商品状态 */
     private Integer productStatus = 0;
 
-    /** 类目编号. */
+    /** 商品类型 */
     private Integer categoryType;
 
+    /** 商品创建时间 */
     private Date createTime;
-
-    private Date updateTime;
 }

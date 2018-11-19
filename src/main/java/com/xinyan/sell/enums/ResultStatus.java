@@ -1,12 +1,15 @@
 package com.xinyan.sell.enums;
 
 import lombok.Getter;
+
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/15
+ *
+ * 返回状态结果， 自定义异常
  */
 @Getter
-public enum ResultEnum {
+public enum ResultStatus {
 
     SUCCESS(0, "成功"),
 
@@ -51,7 +54,7 @@ public enum ResultEnum {
 
     private String message;
 
-    ResultEnum(Integer code, String message) {
+    ResultStatus(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

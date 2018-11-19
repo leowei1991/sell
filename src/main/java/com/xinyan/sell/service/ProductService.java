@@ -1,5 +1,6 @@
 package com.xinyan.sell.service;
 
+import com.xinyan.sell.dto.CartDTO;
 import com.xinyan.sell.po.ProductInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,24 +8,40 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
- * Administrator
- * 2018/11/13 0013
+ * 王宸
+ * 2018/11/14
+ *
+ * 卖家 商品业务接口
  */
 public interface ProductService {
 
-    ProductInfo findOne(String productId);
+    //卖家端
 
-    /**
-     * 查询所有在架商品列表
+    /**根据商品ID查询
+     * @param productId
      * @return
      */
-    List<ProductInfo> findUpAll();
+    ProductInfo findOne(String productId);
 
+    /**商品列表
+     * @return
+     */
+    List<ProductInfo> findAll();
+
+    /**分页查询
+     * @param pageable
+     * @return
+     */
     Page<ProductInfo> findAll(Pageable pageable);
 
-    ProductInfo save(ProductInfo productInfo);
+    /**根据商品状态查询
+     * @param productStatus
+     * @return
+     */
+    List<ProductInfo> findByProductStatus(Integer productStatus);
 
-
-
-
+    /**更新库存
+     * @param cartDTOList
+     */
+    void decreaseStock(List<CartDTO> cartDTOList);
 }
