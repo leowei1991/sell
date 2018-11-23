@@ -21,7 +21,11 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
+<<<<<<< Updated upstream
     private ProductInfoRepository repository;
+=======
+    private ProductInfoRepository productRepository;
+>>>>>>> Stashed changes
 
     @Override
     public ProductInfo findOne(String productId) {

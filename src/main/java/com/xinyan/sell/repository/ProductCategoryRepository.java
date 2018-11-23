@@ -18,5 +18,6 @@ public interface ProductCategoryRepository extends JpaRepository<ProductCategory
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
 
     /** 根据id查询单个商品 */
-    ProductCategory findByCategoryId(Integer id);
+
+
 }
