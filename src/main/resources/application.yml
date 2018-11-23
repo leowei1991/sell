@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://192.168.2.218:3306/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+  freemarker:
+      request-context-attribute: request
 
 server:
   context-path: /sell

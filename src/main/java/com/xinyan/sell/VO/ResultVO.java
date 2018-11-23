@@ -4,17 +4,17 @@ import lombok.Data;
 
 /**
  * Administrator
- * 2018/11/13 0013
+ * 2018/11/21 0021 10:35
+ * http请求的最外层对象
  */
 @Data
 public class ResultVO<T> {
-
-    /** 错误码. */
+    //状态码
     private Integer code;
-
-    /** 提示信息. */
+    //消息提示
     private String msg;
 
-    /** 具体内容. */
+    //返回的具体数据对象data
     private T data;
+
 }
